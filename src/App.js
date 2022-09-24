@@ -1,16 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
+import  Lista  from "./Lista"
 import {
   BrowserRouter as Router,
-  Link,
+  Routes,
   Route,
-  Switch,
-} from 'react-router-dom';
+  Link
+} from "react-router-dom";
 import React, { useState } from "react"
 
-const Signup = () => <h1>Signup</h1>;
-
 export default function (props) {
+  <Routes>
+    <Route path="/" element={<Lista/>} />
+  </Routes>
   let [authMode, setAuthMode] = useState("signin")
 
   const changeAuthMode = () => {
@@ -46,9 +48,11 @@ export default function (props) {
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
-                Ingresar
-              </button>
+              <Link to="/">
+                <button type="submit" className="btn btn-primary">
+                  Ingresar
+                </button>
+              </Link>
             </div>
             <p className="text-center mt-2">
               <a href="#">¿Olvido la Contraseña?</a>
